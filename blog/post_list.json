@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Mathematical Justification on Linear Regression",
+        "published_at": "March 17, 2025",
+        "categories": ["Machine Learning", "Featured"],
+        "image": "assets/Mathematical Justification on Linear Regression/cover.jpg",
+        "content": "content/Mathematical Justification on Linear Regression.tex"
+    },
+    {
+        "title": "Avoiding Misunderstanding Data: Correlation vs Causation",
+        "published_at": "March 18, 2025",
+        "categories": ["Data Analytics", "Featured"],
+        "image": "assets/Avoiding Misunderstanding Data Correlation vs Causation/cover.webp",
+        "content": "content/Avoiding Misunderstanding Data Correlation vs Causation.tex"
+    },
+    {
+        "title": "Lane Detection using UNet",
+        "published_at": "March 18, 2025",
+        "categories": ["Machine Learning", "Computer Vision", "Featured"],
+        "image": "assets/Lane Detection using UNet/cover.png",
+        "content": "content/Lane Detection using UNet.tex"
+    },
+    {
+        "title": "Getting Deeper on BiSeNet-V2",
+        "published_at": "March 18, 2025",
+        "categories": ["Computer Vision", "Machine Learning"],
+        "image": "assets/Getting Deeper on BiSeNetV2/cover.jpg",
+        "content": "content/Getting Deeper on BiSeNet-V2.tex"
+    }
+]

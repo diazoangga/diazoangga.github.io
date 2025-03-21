@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Marked for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
+
+    <!-- Your script -->
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header id="site-header">
+        <nav>
+            <ul>
+                <li><a href="../main.html">Home</a></li>
+                <li><a href="../about/main.html">About Me</a></li>
+                <li><a href="../projects/main.html">Projects</a></li>
+                <li><a href="../blog/main.html">Blog</a></li>
+            </ul>
+            <!-- <button id="theme-toggle">
+                <span class="icon">🌙</span>
+            </button> -->
+        </nav>
+    </header>
+    <button id="theme-toggle">🌙</button>
+
+
+    <main>
+        <h1 id="post-title"></h1>
+        <p class="post-meta"><span id="post-date"></span></p>
+        <div id="post-categories"></div>
+        <div class="post-content" id="post-content"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script defer src="scripts.js"></script>
+</head>
+<body>
+  <header id="site-header">
+    <nav>
+      <ul>
+        <li><a href="../main.html">Home</a></li>
+        <li><a href="../about/main.html">About Me</a></li>
+        <li><a href="../projects/main.html">Projects</a></li>
+        <li><a href="main.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <button id="theme-toggle">🌙</button>
+
+  <main>
+    <section id="blog-header">
+      <h1>Blog</h1>
+      <p>I write and share my knowledge about AI technology, computer vision, and mathematics...</p>
+    </section>
+
+    <section id="blog-categories">
+      <div class="category" id="machine-learning">
+        <h2>Machine Learning</h2>
+        <div class="gallery" id="ml-posts"></div>
+      </div>
+      <div class="category" id="computer-vision">
+        <h2>Computer Vision</h2>
+        <div class="gallery" id="cv-posts"></div>
+      </div>
+      <div class="category" id="data-analytics">
+        <h2>Data Analytics</h2>
+        <div class="gallery" id="da-posts"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025</p>
+  </footer>
+</body>
+</html>
