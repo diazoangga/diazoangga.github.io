@@ -3,11 +3,19 @@
 Published Date: March 18, 2025
 Tags: Data Analytics, Featured
 
-The quote from Richard Hamming (1962), *“The purpose of computing is insight, not numbers,”* describes the importance of understanding what the data represents and the story behind the numbers. In his book, he stated that it is not about how the data is read and used, instead, he advised to understand when the results are obtained — meaning that the data should be inbound with the source of problems to be addressed. A clear goal, of course, is a must to have a clear framework in order to acquire insights in data analytics. Another common mistake that people tend to have is confusing correlation and causation.
+The quote from Richard Hamming (1962), *“The purpose of computing is insight, not numbers,”* describes the importance of understanding what the data truly represents — the story behind the numbers. In his book, he stated that it’s not just about reading and processing data, but about understanding when and why the results appear. Data should be tightly bound to the problem it intends to solve. A clear goal is essential to build an effective framework for extracting insights. However, one common pitfall in data interpretation is the confusion between **correlation** and **causation**.
 
-Correlation and causation are the metrics that data analysts or decision-makers use to make decisions. Correlation, by definition, describes the degree to which two variables move in relation to each other. For example, if you have a dataset between daylight period and temperature, we can conclude, intuitively, that daylight period and temperature are positively correlated. On the contrary, causation indicates that one event is the result of the occurrence of the other event. One important thing to remember is that just because two data are correlated to each other, does not mean the two data have causal relationship. One of the famous research by Prinz (2020) highlights the danger of misinterpreting correlation as causation. He discussed evaluating a report about the positive correlation between chocolate consumption and Nobel laureates per capita (as claimed by Messerli, 2012). It stated that even though there was a positive correlation between those variables, no mechanism was found between them. Prinz concludes that either there are hidden variables that are correlated with them or the correlations are accidental or coincidental. This case is a perfect example of thinking fallacy: Cum Hoc Ergo Propter Hoc (with this, therefore because of this) and Post Hoc Ergo Propter Hoc (after this, therefore because of this). It can be falsely assumed that eating more chocolate improves cognitive abilities, leading to Novel-worthy achievements easily.
+Correlation and causation are the metrics that data analysts or decision-makers use to make decisions. Correlation, by definition, describes the degree to which two variables move in relation to each other. For example, if you have a dataset between daylight period and temperature, we can conclude, intuitively, that daylight period and temperature are positively correlated. On the contrary, causation indicates that one event is the result of the occurrence of the other event. One important thing to remember is that just because two data are correlated to each other, does not mean the two data have causal relationship. 
 
-This leads to answer broader questions, what the tasks of data science are. In principle, data science has 3 tasks: defining the data, predicting what would happen, and what would happen if there is intervened data. To put into broader contexts, in the real-world, let’s say that we have an imaginary causal model on how X, Y, and Z interact. And assume for X, Y and Z, there are probability distribution on how X, Y, Z correlated. That’s how we have the data we have in real world. However, most of the time we only know the data without knowing the probability distribution and the causal models. That’s where the task of data scientist live. Extracting the probability distribution from data is the description prediction task. and getting the structural causal model is the causal inference task.
+One of the famous research by Prinz (2020) highlights the danger of misinterpreting correlation as causation. He discussed evaluating a report about the positive correlation between chocolate consumption and Nobel laureates per capita (as claimed by Messerli, 2012). It stated that even though there was a positive correlation between those variables, no mechanism was found between them. Prinz concludes that either there are hidden variables that are correlated with them or the correlations are accidental or coincidental. This case is a perfect example of thinking fallacy: Cum Hoc Ergo Propter Hoc (with this, therefore because of this) and Post Hoc Ergo Propter Hoc (after this, therefore because of this). It can be falsely assumed that eating more chocolate improves cognitive abilities, leading to Novel-worthy achievements easily.
+
+This leads us to a broader understanding of what data science really does. In principle, data science tackles three core tasks:
+
+- Descriptive analysis – What is happening?
+- Predictive modeling – What will happen?
+- Causal inference – What would happen if we intervene?
+
+Let’s say we have three variables: X, Y, and Z. In the real world, these variables follow an unknown causal process. All we observe are the outcomes — the data. We don’t see the underlying structural causal model or the joint probability distribution. Thus, the data scientist’s job is to infer these structures from the data.
 
 ## Measuring Correlations
 
@@ -19,10 +27,10 @@ $$
 
 Where:
 
-- r = correlation coefficient
-- x_i and y_i = individual sample points
-- \bar{x} and \bar{y} = sample means
-- n = sample size
+- $r$ = correlation coefficient
+- $x_i$ and $y_i$ = individual sample points
+- $\bar{x}$ and $\bar{y}$ = sample means
+- $n$ = sample size
 
 The correlation coefficient indicates:
 
@@ -30,7 +38,11 @@ The correlation coefficient indicates:
 - 0: No correlation
 - -1: Perfect negative correlation
 
-Here are visual representations of different types of correlations:
+Figure 1 shows the typology of correlations.
+
+![Figure `. Typology of Correlations](img1.gif)
+
+However, correlation does not imply a directional or causal effect. That's where causal analysis comes into play.
 
 ## Causal Analysis
 

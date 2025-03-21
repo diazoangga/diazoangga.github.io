@@ -3,13 +3,13 @@
 Published Date: March 17, 2025
 Tags: Featured, Machine Learning
 
-In machine learning, **linear regression** is one of the most fundamental and widely used models. It is a **deterministic model**, meaning that for a given set of input features, it always produces the same output without randomness. It establishes a **linear relationship** between the input variables and the target variable, making predictions based on learned weights.
+In machine learning, **linear regression** is one of the most fundamental and widely used models. It is a **deterministic model**, meaning that for a given set of input features, it always produces the same output without inherent randomness. It establishes a **linear relationship** between the input variables and the target variable, making predictions based on learned weights.
 
 This article discusses the **mathematical justification** behind linear regression in depth, starting from the **concept of linear regression**, moving on to the **mathematical formulation of the least square error (LSE)** and its justification, and finally discussing **Maximum A Posteriori (MAP) estimation**, **closed-form solutions**, and **regularization techniques.**
 
 ## Understanding Linear Regression
 
-Linear regression is a method used to model the relationship between one or more input features and a target variable. Given a multivariable of input $\bold{x}$ and an output of $y$, the model will assume a linear dependency between them as the following equation where n is the number of input features.
+Linear regression is a method used to model the relationship between one or more input features and a target variable. Given a multivariable of input $\bold{x}$ and an output of $y$, the model assumes a linear dependency as the following equation where $n$ is the number of input features.
 
 $$
 y=w_0 + w_1x_1+w_2x_2+...+w_nx_n
@@ -21,17 +21,17 @@ $$
 \bold{y} = \bold{X}\bold{w}
 $$
 
-notice that $\bold{X}$ is an $N \times D$ dimension matrix, where  $N$ is the number of data points and $D$ is a number of input features; $\bold{w}$ is the weight vector; and $\bold{y}$ is the predicted output. Figure 1 is an example of linear regression. From the picture, we know that the predicted outputs (blue line) remain unchanged as the inputs remain the same. This is what deterministic models mean. 
+notice that $\bold{X}$ is an $N \times D$ dimension matrix, where  $N$ is the number of data points and $D$ is a number of input features; $\bold{w}$ is the weight vector; and $\bold{y}$ is the predicted output. 
 
-Another thing to look at is that there are always some errors between the actual data (x,y) and the predicted values. Intuitively, we would want to minimise the errors. But, how do we achieve that?
+Figure 1 is an example of linear regression. From the picture, we know that the predicted outputs (blue line) remain unchanged as the inputs remain the same. This is what deterministic models mean. 
+
+Another key aspect to look is the presence of errors between the actual data (x,y) and the predicted values. Intuitively, we would want to minimise the errors. But, how do we achieve that?
 
 ![Figure 1. Linear Regression (Source: Grammarly.com)](img1.png)
 
-Figure 1. Linear Regression (Source: Grammarly.com)
-
 ## Least Square Error
 
-One widely used metric to answer that is by using least square error (LSE). LSE measures the sum of the squared differences between the actual and the predicted values. When performing linear regression, we usually want to minimise the least square error. While the idea is intuitively acceptable, it still needs to be explained mathematically as to why LSE is used widely.
+One widely used metric to answer that is by using least square error (LSE).  It measures the sum of the squared differences between the actual and the predicted values. When performing linear regression, we usually want to minimise the least square error. While the idea is intuitively acceptable, it still needs to be explained mathematically as to why LSE is used widely.
 
 The Least Square Error (LSE), also known as the Sum of Squared Errors (SSE), is a mathematical method used to measure the difference between predicted values and actual observed values in a dataset. It's calculated by:
 
@@ -56,7 +56,9 @@ The squaring operation serves two important purposes:
 
 Although LSE seems reasonable, it still does not answer the justification why it is acceptable to be widely used. The key is on the **data and weights assumptions.**
 
-The goal of regression is to find the best weights ($\bold{w}$) to represent the data. This means we need to maximize the probability of the weights given the data, $p(\bold{w}|\mathcal{D})$, which is represented as: 
+## MAP Estimation and Likelihood
+
+The goal of regression is to find the optimal weights ($\bold{w}$) to represent the data. This means we need to maximize the probability of the weights given the data, $p(\bold{w}|\mathcal{D})$, which is represented as: 
 
 $$
 \bold{w_{MAP}^\ast} =\argmax_\bold{w}{p(\bold{w}|\mathcal{D})}
@@ -68,7 +70,7 @@ $$
 p(\bold{w}|\mathcal{D}) = \dfrac{p(\mathcal{D}|\bold{w})p(\bold{w})}{p(\mathcal{D})}
 $$
 
-which is saying that we can find the posterior by the probability of “how likely is the data $\mathcal{D}$ given the weights are established”, which is called *likelihood*, times the prior assumption of the probability distribution of weights, which is called *prior*. 
+which is saying that we can find the posterior by the probability of “how likely the data $\mathcal{D}$ is, given the weights are established”, which is called *likelihood*, times the prior assumption of the probability distribution of weights, which is called *prior*. 
 
 Since the $p(\mathcal{D})$ is independent of $\bold{w}$, we only focus on the numerator. The function we maximise simplifies to:
 
@@ -78,9 +80,7 @@ $$
 
 ![Figure 2. Gaussian Distribution over Linear Regression Line](img2.png)
 
-Figure 2. Gaussian Distribution over Linear Regression Line
-
-From here, let’s assume that the prior distribution of weights is a uniform distribution, resulting the second term becoming constant. We can omit the $\log{p(\bold{w}})$, resulting in maximising the posterior is actually the same as maximising the likelihood. So what does the probability distribution of likelihood look like? Yes, it’s *Gaussian,* which is shown in the following equation. However, the question is why the $\mu$ is $\bold{Xw}$ ? Remember the regression line in the Figure 1? The line represents the highest probability of y given the input $\bold{X}$ and weights $\bold{w}$. We can imagine every point in the line is the highest point in a Gaussian distribution stretching out the y-axis, as illustrated in Figure 2.
+From here, let’s assume that the prior distribution of weights is a uniform distribution, meaning that we random pick the weights with the same probability. It results the second term becoming constant, which we can omit the $\log{p(\bold{w}})$, resulting in maximising the posterior is actually the same as maximising the likelihood. So what does the probability distribution of likelihood look like? Yes, it’s *Gaussian,* which is shown in the following equation. However, the question is why the $\mu$ is $\bold{Xw}$ ? Remember the regression line in the Figure 1? The line represents the highest probability of y given the input $\bold{X}$ and weights $\bold{w}$. We can imagine every point in the line is the highest point in a Gaussian distribution stretching out the y-axis, as illustrated in Figure 2.
 
 $$
 \log{p(\mathcal{D}|\bold{w})}=\log{p(\bold{y}|\bold{X},\bold{w})}=\log{ \mathcal{N}(\bold{y},\bold{Xw},\sigma_y^2)}=\log{\dfrac{1}{\sigma_y \sqrt{2\pi}}} - \dfrac{1}{2\sigma_y^2}(\bold{y}-\bold{Xw})^2
@@ -101,8 +101,6 @@ $$
 What if the variance of y is not the same for all points in y? If we still use the lease square error, then the linear regression will not be accurate, showing a high residual between the predicted and actual values. One of the solutions is by using weighted least square errors.
 
 ![Figure 3. Homoscedasticity vs Heteroscedasticity](img3.png)
-
-Figure 3. Homoscedasticity vs Heteroscedasticity
 
 ## Closed-Form Equation
 
