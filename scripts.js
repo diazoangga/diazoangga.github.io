@@ -36,13 +36,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Load featured content
     fetch("projects/project_list.json")
-        .then(response => response.json())
-        .then(data => displayFeaturedItems(data, projectsContainer));
+        .then(res => res.json())
+        .then(projects => {
+            const container = document.getElementById("recent-projects-container");
+            displayFeaturedProjects(projects, container);
+        });
 
     fetch("blog/post_list.json")
         .then(response => response.json())
         .then(data => displayFeaturedItems(data, articlesContainer));
 });
+
+function displayFeaturedProjects(projects, container) {
+    // Filter for featured projects only
+    // const featured = projects.filter(p => p.categories && p.categories.includes("Featured"));
+  
+    // Sort by date (newest first)
+    projects.sort((a, b) => new Date(b.created_date) - new Date(a.created_date));
+  
+    // Take top 3
+    projects.slice(0, 3).forEach(project => {
+      const item = document.createElement("div");
+      const formattedDate = new Date(project.created_date).toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+      });
+      item.className = "featured-item";
+      item.innerHTML = `
+        <img src="projects/${project.image}" alt="${project.title}">
+        <h3>${project.title}</h3>
+        <p class="project-date">${formattedDate}</p>
+        <p>${project.description}</p>
+        <a href="${project.link}" class="btn" >Explore</a>
+      `;
+      container.appendChild(item);
+    });
+  }
 
 function displayFeaturedItems(data, container, type) {
     const featuredItems = data.filter(item => item.categories.includes("Featured"));

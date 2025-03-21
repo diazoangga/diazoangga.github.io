@@ -1,0 +1,31 @@
+[
+    {
+      "title": "Lane Detection using BiSeNet-v2",
+      "created_date": "2022-06-18",
+      "description": "A lane detection system trained on the CU Lane dataset using BiSeNetV2 architecture and Discriminative Loss for clustering.",
+      "image": "assets/lane_detection_bisenetv2.png",
+      "link": "https://github.com/diazoangga/lanenet-lane-detection-pytorch"
+    },
+    {
+      "title": "Face Detection",
+      "created_date": "2023-09-06",
+      "description": "A program that classifies images as face or non-face using a Convolutional Neural Network (CNN) model.",
+      "image": "assets/face_detection.png",
+      "link": "https://github.com/diazoangga/face-detection"
+    },
+    {
+      "title": "Style Transfer",
+      "created_date": "2023-03-15",
+      "description": "A project that transforms input images into paintings with custom styles using a generative model.",
+      "image": "assets/style_transfer.jpg",
+      "link": "https://github.com/diazoangga/style-transfer"
+    },
+    {
+      "title": "Auto-annotation",
+      "created_date": "2024-05-30",
+      "description": "A full-stack application for automatic image annotation using YOLO, developed with Flask (backend) and React (frontend).",
+      "image": "assets/auto_annotation.webp",
+      "link": "https://github.com/diazoangga/auto-annotation"
+    }
+  ]
+  

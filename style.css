@@ -143,7 +143,7 @@ nav ul li a {
     margin-top: 40px;
 }
 
-#featured-projects, #featured-articles {
+#recent-projects, #featured-articles {
     text-align: center;
     margin: 60px auto;
     padding: 20px;
@@ -156,7 +156,7 @@ footer {
 }
 
 #articles-container,
-#projects-container {
+#recent-projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
