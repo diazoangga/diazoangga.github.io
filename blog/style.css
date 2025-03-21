@@ -9,6 +9,9 @@
   --border-radius: 8px;
 }
 
+h1, strong {
+  color: var(--secondary-color);
+}
 .light-mode {
   --primary-text-color: #1e1e1e;
   --secondary-text-color: #333;
