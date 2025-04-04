@@ -26,5 +26,13 @@
         "categories": ["Computer Vision", "Machine Learning"],
         "image": "assets/Getting Deeper on BiSeNetV2/cover.jpg",
         "content": "content/Getting Deeper on BiSeNet-V2.tex"
+    },
+
+    {
+        "title": "Evolution of Generative Models: A Mathematical Perspective",
+        "published_at": "April 8, 2025",
+        "categories": ["Computer Vision", "Generative AI"],
+        "image": "assets/Evolution of Generative Models A Mathematical Perspective/cover.png",
+        "content": "content/Evolution of Generative Models A Mathematical Perspective.tex"
     }
 ]
