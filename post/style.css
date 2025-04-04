@@ -19,6 +19,8 @@
   --da-text: #006a5a;
   --fe-bg: #ffd699;
   --fe-text: #8a5c00;
+  --ga-bg: #99d3ff;
+  --ga-text: #0146a0;
 }
 
 /* Light mode */
@@ -141,6 +143,11 @@ h1 {
 .badge-fe {
   background: var(--fe-bg);
   color: var(--fe-text);
+}
+
+.badge-ga {
+  background: var(--ga-bg);
+  color: var(--ga-text);
 }
 
 .badge-default {

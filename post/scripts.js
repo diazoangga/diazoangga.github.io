@@ -170,7 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "machine learning": "badge-ml",
       "computer vision": "badge-cv",
       "data analytics": "badge-da",
-      "featured": "badge-fe"
+      "featured": "badge-fe",
+      "generative ai": "badge-ga",
     };
   
     return map[normalized] || "badge-default";

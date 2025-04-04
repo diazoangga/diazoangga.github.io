@@ -30,7 +30,7 @@ $$P(E) \propto \mathcal{exp}(- \dfrac{E}{k_BT})$$
 
 where $E$ is the energy state, $T$ is the absolute temperature, and $k_B$ is Boltzmann's contsant. From this equation, we can see that the lower energy, the higher the probability. But it doesn't answer the absolute value of $P(E)$. Suppose that energy has many levels, and we want to compare between $E_1, E_2, E_3,...,E_N$. We only know that $P(E_1)+P(E_2)+P(E_3)+...+P(E_N)=1$. We can add the normalization for each absolute value with $Z$, where
 $$P(E) \propto \dfrac{1}{Z}\mathcal{exp}(- \dfrac{E}{k_BT})$$
-$$Z=\Sum_s \mathcal{exp}(-E_s/k_BT)$$
+$$Z=\sum_s \mathcal{exp}(-E_s/k_BT)$$
 
 And so a network, we want to know whether a node is on or off. In a Hopfield Network, the network minimizes an energy function to reach a stable configuration (a memory). The energy of a binary state vector \( \mathbf{x} \in \{-1, +1\}^n \) is:
 
@@ -78,7 +78,7 @@ Generative models are never far from Classical (Bayesian) statistics that is a t
 - A covariance $\Sigma$ that defines its width.
 - A probability $\pi$ that defines how big or small the Gaussian function will be compared to other Gaussians.
 
-$$\Sum_{k=1}^K\pi_k=1$$
+$$\sum_{k=1}^K\pi_k=1$$
 
 If we are able to train this model with Gaussians on given dataset, we can generate new data based on the optimal model representing the given dataset.
 

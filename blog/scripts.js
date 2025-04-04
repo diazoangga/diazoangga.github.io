@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.getElementById("theme-toggle");
     const mlPostsContainer = document.getElementById("ml-posts");
     const cvPostsContainer = document.getElementById("cv-posts");
+    const gaPostsContainer = document.getElementById("ga-posts");
     const daPostsContainer = document.getElementById("da-posts");
   
     // Apply saved theme
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         populateBlogPosts(data, mlPostsContainer, "Machine Learning");
         populateBlogPosts(data, cvPostsContainer, "Computer Vision");
         populateBlogPosts(data, daPostsContainer, "Data Analytics");
+        populateBlogPosts(data, gaPostsContainer, "Generative AI");
       });
   });
   
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Machine Learning": "badge-ml",
       "Computer Vision": "badge-cv",
       "Data Analytics": "badge-da",
+      "Generative AI": "badge-ga",
       "Featured": "badge-featured"
     };
     return categoryMap[category] || "badge-default";
